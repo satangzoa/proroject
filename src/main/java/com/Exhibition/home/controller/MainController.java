@@ -286,28 +286,6 @@ public class MainController {
 		return "reservationPage2";
 	}
 	
-	@RequestMapping(value = "/buy")
-	public String buy() {
-		
-		return "buy";
-	}
-	
-	@RequestMapping(value = "/cart_List")
-	public String cart_List() {
-		
-		return "cart_List";
-	}
-	@RequestMapping(value = "/MainStore")
-	public String MainStore() {
-		
-		return "MainStore";
-	}
-	
-	@RequestMapping(value = "/reservationPage")
-	public String reservationPage2() {
-		
-		return "reservationPage";
-	}
 	
 	@RequestMapping(value = "test")
 	public String test(Model model, HttpServletResponse response) throws IOException {
@@ -329,5 +307,22 @@ public class MainController {
 		
 		return "test";
 	}
-	
+	@RequestMapping (value ="comment")
+	public String review(HttpServletRequest request, Model model) {
+		
+//		String rid = request.getParameter("rid");
+//		String rcontent = request.getParameter("rcontent");
+//		String star = request.getParameter("star");
+//		String score = request.getParameter("score");
+//		
+//		IDao dao = sqlSession.getMapper(IDao.class);
+//		dao.writeMent(rid, rcontent, star, 0);
+//		
+//		model.addAttribute("rid", rid);
+//		model.addAttribute("rcontent", rcontent);
+//		model.addAttribute("star", star);
+//		model.addAttribute("score", score);
+		
+		return "comment";
+	}
 }

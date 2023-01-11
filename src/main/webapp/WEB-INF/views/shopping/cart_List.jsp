@@ -4,6 +4,20 @@
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <title>상품장바구니 목록</title>
+<script type="text/javascript">
+
+
+function fnClear(){
+	if(confirm("장바구니를 비우시겠습니까?")) {
+		location.href = "CartClear";	
+	}
+}
+
+function fnGo(){
+	location.href = "ShopMallMain";
+}
+
+</script>
 </head>
 <body>
     <div class="container">
@@ -12,9 +26,9 @@
         <form name="" id="" method="post" action="">
             <table class="table table-bordered" >
                 <tr>
-                    <th scope="col">상품명</th>
-                    <th scope="col">상품가격</th>
-                    <th scope="col">수량</th>
+                    <th scope="col">번호</th>
+                    <th scope="col">짱구이름</th>
+                    <th scope="col">주문 수량</th>
                     <th scope="col">총금액</th>
                     <th scope="col">취소</th>
                 </tr>
@@ -33,7 +47,7 @@
                         <fmt:formatNumber pattern="###,###,###" value=""/>
                     </td>
                     <td>
-                        <a href="">삭제</a>
+                        <input type='button' value='장바구니 비우기' onclick='fnClear()' />"
                     </td>
                 </tr>
                 <tr>
@@ -45,8 +59,9 @@
                 </tr>
             </table>
             <input type="hidden" name="count" value="">
+            <input type='button' value='결제하기' onclick='fnPay()' >
             <button type="submit" id="" class="btn btn-primary my-2">수정</button>
         </form>
-  <a href="buy">사러가기</a>
+  	<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />
 </body>
 </html>

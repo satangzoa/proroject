@@ -14,7 +14,6 @@
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
 
-
 <script type="text/javascript">
 
 
@@ -74,10 +73,13 @@
 <body>
 <%@ include file="inc/header.jsp" %>
    <center>
+   <form action ="ticketingOk?num=${param.num}" method="post"> 
+   <input type="hidden" value="${ticket.tnum }" name="tnum">
    <table width="75%" border="0" cellspacing="0" cellpadding="20">
       <tr>
          <td class="titlebox">
-            <span class="title01">예약 페이지</span>
+
+            <span class="title01">예매 페이지</span>
          </td>
       </tr>
       <tr>
@@ -90,50 +92,36 @@
                      <table border="0" cellspacing="0" cellpadding="10">
                         <form action="reservationOk" method="post" name="reservation_frm">
                            <tr>
-                              <td><span class="content_text01">MEMBER ID</span></td>
-                              <td><input class="input_type01" type="text" name="rid" value="${memberId}"></td>
+                              <td><span class="content_text01">아이디:</span></td>
+                              <td><input class="input_type01" type="text" name="mid" value="${memberId}"></td>
                            </tr>
                            <tr>
-                              <td><span class="content_text01">NAME</span></td>
-                              <td><input class="input_type01" type="text" name="rname" value="${member.mname}"></td>
+                              <td><span class="content_text01">전시회이름:</span></td>
+                              <td><input class="input_type01" type="text" name="ticketName" value="${ticket.ticketName}"></td>
                            </tr>
-                           <tr>
-                              <td><span class="content_text01">PHONE</span></td>
-                              <td><input class="input_type01" type="text" name="rphone">&nbsp;- 제외 입력</td>
-                           </tr>
-                           <tr>
-                              <td><span class="content_text01">DATE</span></td>
+                           
+                              <td><span class="content_text01">관람날짜:</span>&nbsp;&nbsp;</td>
                               <td>
                                  <input class="input_type01" id="pickDate" type="text" name="rday">&nbsp;
-                                 <select class="select_type01" name="selectOption">
-                                        <option value="09:30">09:30</option>
-                                        <option value="10:20">10:20</option>
-                                        <option value="11:10">11:10</option>
-                                        <option value="12:00">12:00</option>
-                                        <option value="14:10">14:10</option>
-                                        <option value="15:00">15:00</option>
-                                        <option value="15:50">15:50</option>
-                                        <option value="16:40">16:40</option>
-                                        <option value="17:30">17:30</option>
-                                    </select>
                                  </td>
-                           </tr>
+                                  <tr>
+                              <td><span class="content_text01">가격:</span></td>
+                              <td><input class="input_type01" type="text" name="price" value="${ticket.price}">
+                         <select name="count">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                </select>장 &nbsp&nbsp
+									 </td>
+									 
                            <tr>
-                              <td><span class="content_text01">ANIMAL</span></td>
-                              <td><input class="input_type01" type="text" name="ranimal"></td>
-                           </tr>
-                           <tr>
-                              <td><span class="content_text01">LIST</span></td>
-                              <td><input class="input_type01" type="text" name="rlist" value="${check }"></td>
-                           </tr>
-                           <tr>
-                              <td><span class="content_text01">CONTENT</span></td>
-                              <td colspan="2"><textarea class="textarea_text01" rows="5" cols="30" name="rcontent"></textarea></td>
-                           </tr>
-                           <tr>
-                              <td colspan="3" align="center">
-                                 <input class="button_type01" type="button" value="예약완료" onclick="reservationCheck()">&nbsp;&nbsp;
-                                 <input class="button_type01" type="button" value="예약취소" onclick="script:window.location='index'">
+                              <td colspan="2" align="center">
+
+                                 <!-- <input class="button_type01" type="button" value="예매하기"  onclick="location.href='ticketingtest'">&nbsp;&nbsp; -->
+                                 <input class="button_type01" type="submit" value="예매하기"  >&nbsp;&nbsp; 
+                                 <input class="button_type01" type="button" value="예매취소" onclick="script:window.location='index'">
                               </td>
                            </tr>
                         </form>
@@ -145,6 +133,7 @@
             </center>
          </td>
       </tr>
+      </form>
    </table>
    </center>
 <%@ include file="inc/footer.jsp" %>

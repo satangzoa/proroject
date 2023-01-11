@@ -35,7 +35,7 @@
   </thead>
   <tbody>
     <tr>
-      <th >1</th>
+      <th >${pnum }</th>
       <td><img src="/resources/img/j1.png"  width='150' height='150'></td>
       <td>베게짱구${pname }</td>
       <td>10000원${pprice }</td>
@@ -47,7 +47,7 @@
                  <option value="5">5</option>
                                 </select>개 </td>
     <!--  <td>   <input type="submit" value="장바구니 보기" onclick="script:window.location='cartda'" /></td>--> 
-  <td>   <input type="button" value="장바구니 보기"   onclick="location.href='cartda?pnum=1'"/></td>
+ <td>   <input type="button" value="장바구니 보기" onclick="location.href='product?pnum=1'" /></td>
     </tr>
     <button style="width: 124px; height: 58px;"
 				class="btn btn-outline-danger" id="insertLike"
@@ -55,7 +55,7 @@
 				<font size="5px">♥</font>
 			</button>
     <tr>
-      <th >2</th>
+      <th >${pnum }</th>
       <td><img src="/resources/img/j2.png" width='150' height='150'></td>
       <td>하품짱구${pname }</td>
       <td>20000원${pprice }</td>
@@ -67,11 +67,11 @@
                  <option value="5">5</option>
                                 </select>개 </td>
       
-  <td>   <input type="button" value="장바구니 보기"   onclick="location.href='cartda?pnum=2'"/></td>
+ <td>   <input type="submit" value="장바구니 보기"  onclick="script:window.location='cartda'" /></td>
     </tr>
     
     <tr>
-      <th >3</th>
+      <th >${pnum }</th>
       <td><img src="/resources/img/j3.png" width='150' height='150'></td>
       <td>흰둥이랑짱구${pname }</td>
       <td>30000원${pprice }</td>
@@ -82,7 +82,7 @@
                  <option value="4">4</option>
                  <option value="5">5</option>
                                 </select>개 </td>
-   <td>   <input type="button" value="장바구니 보기"   onclick="location.href='cartda?pnum=3'"/></td>
+   <td>   <input type="submit" value="장바구니 보기"  onclick="script:window.location='cartda'" /></td>
     </tr>
     
   </tbody>
